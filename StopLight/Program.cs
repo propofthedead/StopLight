@@ -8,8 +8,11 @@ namespace StopLight
 {
 	class Program
 	{
+		void run() { }
+
 		static void Main(string[] args)
 		{
+			(new Program()).run();
 		}
 	}
 }
