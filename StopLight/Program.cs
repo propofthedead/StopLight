@@ -8,25 +8,32 @@ namespace StopLight
 {
 	class Program
 	{
-		void DisplayTrafficLight(int color)
+		enum TrafficLight {
+			Red,Green,Yellow
+		};
+		void DisplayTrafficLight(TrafficLight colorIdx)
 		{
-			switch (color) {
-				case 1:
+			switch (colorIdx) {
+				case TrafficLight.Red:
 					Console.WriteLine("Red");
 					break;
-				case 2:
+				case TrafficLight.Green:
 					Console.WriteLine("Green");
 					break;
-				case 3:
+				case TrafficLight.Yellow:
 					Console.WriteLine("Yellow");
 					break;
 			}
 		}
 		void run() {
 			for (int idx = 0; idx < 3; idx++) {
-				int color = 1;//red
+				int colorIdx = 1;//red
+				TrafficLight color = (TrafficLight)colorIdx;
 				DisplayTrafficLight(color);
-				DisplayTrafficLight(++color);
+				color = (TrafficLight)(++colorIdx);
+				DisplayTrafficLight(color);
+				color = (TrafficLight)(++colorIdx);
+				DisplayTrafficLight(color);
 			}
 
 		}
